@@ -1,0 +1,78 @@
+{
+  "packageRules": [
+    {
+      "description": "Auto merge container digests",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["digest"],
+      "matchPackagePattern": ["ghcr.io/k8s-at-home", "ghcr.io/onedr0p"]
+    },
+    {
+      "description": "Auto merge containers",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": [
+        "ghcr.io/k8s-at-home/plex",
+        "ghcr.io/k8s-at-home/prowlarr-nightly",
+        "ghcr.io/k8s-at-home/jackett",
+        "ghcr.io/k8s-at-home/readarr",
+        "ghcr.io/k8s-at-home/plex",
+        "ghcr.io/k8s-at-home/nzbget",
+        "ghcr.io/k8s-at-home/tautulli",
+        "ghcr.io/k8s-at-home/sonarr-develop",
+        "ghcr.io/k8s-at-home/radarr-develop"
+      ]
+    },
+    {
+      "description": "Auto merge GitHub Actions",
+      "matchDatasources": ["github-tags", "github-actions"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": [
+        "lycheeverse/lychee-action",
+        "renovatebot/github-action",
+        "oxsecurity/megalinter"
+      ]
+    },
+    {
+      "description": "Auto merge pre-commit hooks",
+      "matchDatasources": ["github-release"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": [
+        "Lucas-C/pre-commit-hooks",
+        "adrienverge/yamllint",
+        "pre-commit/pre-commit-hooks",
+        "sirosen/texthooks",
+        "k8s-at-home/sops-pre-commit"
+      ]
+    },
+    {
+      "description": "Auto merge Helm Realeases",
+      "matchDatasources": ["helm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["kube-prometheus-stack", "grafana"]
+    },
+    {
+      "description": "Auto merge Helm Realeases",
+      "matchDatasources": ["galaxy", "galaxy-collection"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["community.docker"]
+    }
+  ]
+}
