@@ -1,5 +1,5 @@
 ---
-- name: Create homeassistant directories
+- name: Create adguardhome directories
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory

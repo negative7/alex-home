@@ -1,0 +1,16 @@
+---
+version: "3.8"
+
+services:
+  homebridge:
+    image: ghcr.io/oznu/homebridge:latest@sha256:aff86ae60be6278e0b7de75c7b5a61abd11b30617b5a255a2eb28e44e2309d26
+    container_name: homebridge
+    restart: always
+    network_mode: host
+    volumes:
+      - "{{ docker_base_dir }}/homebridge/config:/homebridge"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"

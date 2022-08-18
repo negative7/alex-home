@@ -1,0 +1,28 @@
+---
+- name: Create homebridge directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: users
+    mode: 0775
+  loop:
+    - "{{ docker_base_dir }}/homebridge"
+    - "{{ docker_base_dir }}/homebridge/config"
+
+- block:
+    - name: Create homebridge docker compose file
+      ansible.builtin.template:
+        src: homebridge/docker-compose.yml.j2
+        dest: "{{ docker_base_dir }}/homebridge/docker-compose.yml"
+        owner: "{{ ansible_user }}"
+        group: users
+        mode: 0775
+    - name: Create homebridge systemd service file
+      ansible.builtin.template:
+        src: "docker-compose@.service.j2"
+        dest: "/etc/systemd/system/docker-compose@homebridge.service"
+        mode: 0644
+      vars:
+        condition_path_is_mount_point: "/"
+  notify: Restart homebridge
