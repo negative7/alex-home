@@ -17,3 +17,4 @@
 # Manage applications
 - import_tasks: node-exporter.yml
 - import_tasks: homeassistant.yml
+- import_tasks: adguard.yml
