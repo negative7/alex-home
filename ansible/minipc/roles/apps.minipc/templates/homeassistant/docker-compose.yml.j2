@@ -13,3 +13,11 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 8123:8123
+  code:
+    container_name: vscode
+    image: codercom/code-server:4.5.1
+    ports:
+      - "3991:8080"
+    volumes:
+      - "{{ docker_base_dir }}/homeassistant/.vscode:/home/coder/.config"
+      - "{{ docker_base_dir }}/homeassistant/config:/home/coder/project"

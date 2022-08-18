@@ -9,6 +9,7 @@
   loop:
     - "{{ docker_base_dir }}/homeassistant"
     - "{{ docker_base_dir }}/homeassistant/config"
+    - "{{ docker_base_dir }}/homeassistant/.vscode"
 
 - block:
     - name: Create homeassistant docker compose file
