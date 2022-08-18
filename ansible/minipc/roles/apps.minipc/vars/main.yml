@@ -1,0 +1,7 @@
+---
+#
+# SECRET* vars are encrypted with sops
+#
+
+# -- Base Docker Directory
+docker_base_dir: /opt/docker

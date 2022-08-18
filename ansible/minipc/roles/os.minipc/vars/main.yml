@@ -1,0 +1,37 @@
+---
+#
+# SECRET* vars are encrypted with sops
+#
+
+os_timezone: "America/New_York"
+os_packages_repositories:
+os_packages_install:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - git
+  - htop
+  - lolcat
+  - nano
+  - neofetch
+  - ntpdate
+  - psmisc
+  - rclone
+  - software-properties-common
+  - tree
+  - uidmap
+  - unzip
+os_packages_remove:
+  - apparmor
+  - apport
+  - byobu
+  - friendly-recovery
+  - landscape-common
+  - lxd-agent-loader
+  - plymouth
+  - plymouth-theme-ubuntu-text
+  - popularity-contest
+  - snapd
+  - sosreport
+  - ubuntu-advantage-tools
+  - ufw
