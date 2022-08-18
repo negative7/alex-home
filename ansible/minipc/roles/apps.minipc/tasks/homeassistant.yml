@@ -1,0 +1,28 @@
+---
+- name: Create homeassistant directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: users
+    mode: 0775
+  loop:
+    - "{{ docker_base_dir }}/homeassistant"
+    - "{{ docker_base_dir }}/homeassistant/config"
+
+- block:
+    - name: Create homeassistant docker compose file
+      ansible.builtin.template:
+        src: homeassistant/docker-compose.yml.j2
+        dest: "{{ docker_base_dir }}/homeassistant/docker-compose.yml"
+        owner: "{{ ansible_user }}"
+        group: users
+        mode: 0775
+    - name: Create homeassistant systemd service file
+      ansible.builtin.template:
+        src: "docker-compose@.service.j2"
+        dest: "/etc/systemd/system/docker-compose@homeassistant.service"
+        mode: 0644
+      vars:
+        condition_path_is_mount_point: "/"
+  notify: Restart homeassistant

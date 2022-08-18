@@ -15,3 +15,10 @@
     state: restarted
     enabled: true
     daemon_reload: true
+
+- name: Restart homeassistant
+  ansible.builtin.systemd:
+    name: "docker-compose@homeassistant.service"
+    state: restarted
+    enabled: true
+    daemon_reload: true

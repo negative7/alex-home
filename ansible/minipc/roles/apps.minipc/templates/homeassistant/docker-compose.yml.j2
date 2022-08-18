@@ -1,0 +1,15 @@
+---
+version: "3.8"
+
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:2022.8.4
+    container_name: homeassistant
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    volumes:
+      - "{{ docker_base_dir }}/homeassistant/config:/config"
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8123:8123
