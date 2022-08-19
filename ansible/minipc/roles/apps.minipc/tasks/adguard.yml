@@ -2,7 +2,7 @@
 - name: pull adguardhome
   docker_image:
     name: adguard/adguardhome
-    tag: v0.107.9
+    tag: v0.107.10
     source: pull
 
 - name: Create adguardhome directories
