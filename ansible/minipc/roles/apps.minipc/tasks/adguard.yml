@@ -1,7 +1,9 @@
 ---
 - name: pull adguardhome
   docker_image:
-    name: adguard/adguardhome:v0.107.9
+    name: adguard/adguardhome
+    tag: v0.107.9
+    source: pull
 
 - name: Create adguardhome directories
   ansible.builtin.file:
