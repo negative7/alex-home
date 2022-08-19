@@ -1,4 +1,8 @@
 ---
+- name: pull adguardhome
+  docker_image:
+    name: adguard/adguardhome:v0.107.9
+
 - name: Create adguardhome directories
   ansible.builtin.file:
     path: "{{ item }}"
