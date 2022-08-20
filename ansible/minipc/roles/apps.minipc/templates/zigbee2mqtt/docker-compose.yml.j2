@@ -1,0 +1,17 @@
+---
+version: "3.8"
+
+services:
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: ghcr.io/koenkk/zigbee2mqtt:1.27.0
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - "{{ docker_base_dir }}/zigbee2mqtt/data:/app/data"
+      - /run/udev:/run/udev:ro
+    environment:
+      - TZ={{ os_timezone }}
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0

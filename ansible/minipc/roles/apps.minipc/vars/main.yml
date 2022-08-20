@@ -5,3 +5,4 @@
 
 # -- Base Docker Directory
 docker_base_dir: /opt/docker
+os_timezone: "America/New_York"

@@ -19,3 +19,4 @@
 - import_tasks: homeassistant.yml
 - import_tasks: adguard.yml
 - import_tasks: homebridge.yml
+- import_tasks: zigbee2mqtt.yml
