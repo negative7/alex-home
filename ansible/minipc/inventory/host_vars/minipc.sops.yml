@@ -1,7 +1,11 @@
-kind: Secret
+z2mkind: ENC[AES256_GCM,data:KlzbcNSF,iv:tAuc5SqjIo0zZmBdmLDeGDn75u9p6WGIN3NDJf6Gncw=,tag:+l/grug91nWxGK8O/Z59dg==,type:str]
 ansible_become_pass: ENC[AES256_GCM,data:KKrge4JG,iv:Ppwb5mCbdS7dsHuVEVZ2QWRmAc90lTDya5YtwedR0hA=,tag:bkR7zjqrEnX6gec9QZ/9rQ==,type:str]
 SECRET_PUBLIC_DOMAIN: ENC[AES256_GCM,data:GT8Des2HaDNQjQuLH5/WhZSN,iv:9ExlVoxSLGlS6ZI+SJt8PVco45ktDkXcHaqhLtCp6yg=,tag:LQEJ0atFyqToHYW5uzeB+w==,type:str]
 SECRET_PRIVATE_DOMAIN: ENC[AES256_GCM,data:0VZr9k1IITH8q0g=,iv:h5FsXPEfMuiMTty/1fyNAXrDs5LPpPHHkJvnyDWsUcg=,tag:tjsTy6gMy2hmuIn1kOjRmg==,type:str]
+MQTT_USER: ENC[AES256_GCM,data:5Dgsn7R4eX3NsHU=,iv:B33kWIRVQL5vFpRw8fl8lyl/jtvmBAeSlmN8fOCdV/c=,tag:OvOoOsJBZqeGrSpv53NSlA==,type:str]
+MQTT_PASSWORD: ENC[AES256_GCM,data:R0fNFlueNW3/brCdbdVfXIMgw1M=,iv:3xKu3x00UVN0JlsYrCIDnfc+LXivaoQqa5dKsEiF+yY=,tag:ELUgQ+B19JmldzrYd8bEug==,type:str]
+MQTT_USER_HASS: ENC[AES256_GCM,data:S5ocfQ==,iv:rOxibGHDJHPP5CqUXj1289Aja5tJ413m2tvacyOTKC0=,tag:+pf5nJqUDCjT2h38l6gTYQ==,type:str]
+MQTT_PASSWORD_HASS: ENC[AES256_GCM,data:tSySBMteba8Egd/n31ZAG2n43CI=,iv:vA1KtDr/VRs9xm2m9+HBqUUfx39khqBPbZ0joR+Jd2M=,tag:Nm1wmGSTh8CA3dbQx+7ivA==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -17,8 +21,8 @@ sops:
             YzBqMUdLaU1HbzJCVVF6eC9Ic005a28K0GRNCDNKb1tLTPsIbMqH5qlBPEQEL2sj
             mi0VZjZA1WAPtdo785UjNSRZ0MXlcVw8wuL23A/KkCRzLvTgpDbOWA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-08-17T23:29:31Z"
-    mac: ENC[AES256_GCM,data:EXUUfCU2yJyn/I2DRJR48MZhjfoNCHeYHj7wq/RaE9+94zJRluR33Zi3aNX5ypSeljQz0CKRNTw9AFpTp4gUJfuvjBkFTDcmbVsHpWAoUtLalrPBfA7LNn+sW2qg1OBlIlmEtSxQjFz+g8t0lOPa96K4DGfhk0ua8Y7z52eeA+A=,iv:In+tXy0oSBR/jIrR/UyQpTEC+mzWlGiMnHNVrxQ1Uoc=,tag:6d8MKp7RaS+okEFHqmCtPA==,type:str]
+    lastmodified: "2022-08-20T16:41:33Z"
+    mac: ENC[AES256_GCM,data:zz5NIc7mMl92Fdvw2MiCdCAgaFv0UmxBpjFAQE41kDFPFmcC1MXLvU+7KO6cAAqXXx2/jX0erRPZmDBAnCWhNpjSdS9Udzb8o+qeB/R8LXokBxoUELLKe+w8j/VNMj+IE+uyBdxrfNGejYdPPQuETpAeNhKVUoU2iDNaQTYyKyE=,iv:Rfy8g5J4VnObfWoy4ofN//nU53a1hE1xZKgFbZtR17I=,tag:6nh8KWgGMLr8qE44ClZWHA==,type:str]
     pgp: []
     unencrypted_regex: ^(kind)$
     version: 3.7.1

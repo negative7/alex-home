@@ -1,9 +1,10 @@
+per_listener_settings false
+listener 1883
+allow_anonymous false
+password_file /mosquitto/config/mosquitto_pwd
 persistence true
 persistence_location /mosquitto/data/
 log_dest file /mosquitto/log/mosquitto.log
-listener 1883
-## Authentication ##
-# allow_anonymous false
-password_file /mosquitto/conf/mosquitto.passwd
+log_dest stdout
 connection_messages false
 autosave_interval 60
