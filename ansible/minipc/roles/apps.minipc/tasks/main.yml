@@ -20,3 +20,4 @@
 - import_tasks: adguard.yml
 - import_tasks: homebridge.yml
 - import_tasks: zigbee2mqtt.yml
+- import_tasks: mosquitto.yml

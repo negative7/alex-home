@@ -1,0 +1,37 @@
+---
+- name: Create mosquitto directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: users
+    mode: 0775
+  loop:
+    - "{{ docker_base_dir }}/mosquitto"
+    - "{{ docker_base_dir }}/mosquitto/data"
+    - "{{ docker_base_dir }}/mosquitto/conf"
+    - "{{ docker_base_dir }}/mosquitto/log"
+
+- block:
+    - name: Create mosquitto docker compose file
+      ansible.builtin.template:
+        src: mosquitto/docker-compose.yml.j2
+        dest: "{{ docker_base_dir }}/mosquitto/docker-compose.yml"
+        owner: "{{ ansible_user }}"
+        group: users
+        mode: 0775
+    - name: Create mosquitto config file
+      ansible.builtin.template:
+        src: mosquitto/mosquitto.conf.j2
+        dest: "{{ docker_base_dir }}/mosquitto/conf/mosquitto.conf"
+        owner: "{{ ansible_user }}"
+        group: users
+        mode: 0775
+    - name: Create mosquitto systemd service file
+      ansible.builtin.template:
+        src: "docker-compose@.service.j2"
+        dest: "/etc/systemd/system/docker-compose@mosquitto.service"
+        mode: 0644
+      vars:
+        condition_path_is_mount_point: "/"
+  notify: Restart mosquitto

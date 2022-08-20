@@ -1,0 +1,16 @@
+---
+version: "3.8"
+
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: ghcr.io/k8s-at-home/eclipse-mosquitto:v2.0.15
+    restart: unless-stopped
+    ports:
+      - 1883:1883
+    volumes:
+      - "{{ docker_base_dir }}/mosquitto/conf:/mosquitto/conf"
+      - "{{ docker_base_dir }}/mosquitto/data:/mosquitto/data"
+      - "{{ docker_base_dir }}/mosquitto/log:/mosquitto/log"
+    environment:
+      - TZ={{ os_timezone }}

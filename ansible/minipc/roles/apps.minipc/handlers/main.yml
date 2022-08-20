@@ -43,3 +43,10 @@
     state: restarted
     enabled: true
     daemon_reload: true
+
+- name: Restart mosquitto
+  ansible.builtin.systemd:
+    name: "docker-compose@mosquitto.service"
+    state: restarted
+    enabled: true
+    daemon_reload: true
