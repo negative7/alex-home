@@ -13,8 +13,8 @@ roles:
     version: 2.2.0
   - src: geerlingguy.docker
     version: 6.0.4
-  - src: xanmanning.k3s
-    version: v3.3.1
+  # - src: xanmanning.k3s
+  #   version: v3.3.1
   - src: https://github.com/mrlesmithjr/ansible-zfs.git
     scm: git
     name: mrlesmithjr.zfs
