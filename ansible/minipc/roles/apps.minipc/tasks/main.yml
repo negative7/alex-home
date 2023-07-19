@@ -17,7 +17,7 @@
 # Manage applications
 - import_tasks: node-exporter.yml
 - import_tasks: homeassistant.yml
-- import_tasks: adguard.yml
+- import_tasks: scrypted.yml
 - import_tasks: homebridge.yml
 - import_tasks: zigbee2mqtt.yml
 - import_tasks: mosquitto.yml

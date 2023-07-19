@@ -23,9 +23,9 @@
     enabled: true
     daemon_reload: true
 
-- name: Restart adguardhome
+- name: Restart scrypted
   ansible.builtin.systemd:
-    name: "docker-compose@adguardhome.service"
+    name: "docker-compose@scrypted.service"
     state: restarted
     enabled: true
     daemon_reload: true
