@@ -2,12 +2,6 @@
 version: "3.8"
 
 services:
-  environment:
-    - SCRYPTED_NVR_VOLUME=/nvr
-    - SCRYPTED_DOCKER_AVAHI=true
-    - SCRYPTED_DOCKER_AVAHI=true
-  devices:
-    - /dev/dri:/dev/dri
   scrypted:
     image: ghcr.io/koush/scrypted:18-jammy-full-v0.39.1
     container_name: scrypted
@@ -15,3 +9,8 @@ services:
     volumes:
       - "/storage/scrypted:/nvr"
     restart: unless-stopped
+    environment:
+      - SCRYPTED_NVR_VOLUME=/nvr
+      - SCRYPTED_DOCKER_AVAHI=true
+    devices:
+      - "/dev/dri:/dev/dri"
